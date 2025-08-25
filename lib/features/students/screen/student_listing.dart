@@ -357,51 +357,7 @@ class _StudentListingPageState extends ConsumerState<StudentListingPage>
                                 ),
                                 tooltip: 'Manual Refresh',
                               ),
-                              SizedBox(width: 8),
-                              // Auto-refresh toggle
-                              GestureDetector(
-                                onTap: _toggleAutoRefresh,
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                  decoration: BoxDecoration(
-                                    color: _isAutoRefreshEnabled
-                                        ? Colors.green.withOpacity(0.1)
-                                        : Colors.grey.withOpacity(0.1),
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: _isAutoRefreshEnabled
-                                          ? Colors.green
-                                          : Colors.grey,
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        _isAutoRefreshEnabled
-                                            ? Icons.autorenew
-                                            : Icons.pause_circle_outline,
-                                        size: 14,
-                                        color: _isAutoRefreshEnabled
-                                            ? Colors.green[700]
-                                            : Colors.grey[700],
-                                      ),
-                                      SizedBox(width: 4),
-                                      Text(
-                                        _isAutoRefreshEnabled ? 'Auto' : 'Manual',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: _isAutoRefreshEnabled
-                                              ? Colors.green[700]
-                                              : Colors.grey[700],
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+
                               SizedBox(width: 12),
                               // Show total count
                               Column(
@@ -415,14 +371,7 @@ class _StudentListingPageState extends ConsumerState<StudentListingPage>
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                  if (_isAutoRefreshEnabled)
-                                    Text(
-                                      'Auto-refresh: ${_autoRefreshInterval.inSeconds}s',
-                                      style: TextStyle(
-                                        color: Colors.green[600],
-                                        fontSize: 10,
-                                      ),
-                                    ),
+
                                 ],
                               ),
                             ],
